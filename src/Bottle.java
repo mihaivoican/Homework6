@@ -34,28 +34,39 @@ public class Bottle {
         }
     }
 
-    public String setOpen() {
-        this.open = true;
-        return "Bottle is opened";
+    public String setOpen(boolean deschis) {
+        this.open = deschis;
+        if (open) {
+            return "Bottle is opened";
+        }else{
+            return "Bottle is closed";
+        }
     }
 
-    public String setClose() {
-        this.open = false;
-        return "Bottle is closed";
-    }
+
 
     public String setDrinks(float cantitate) {
-        if (getOpen()== false){
-            System.out.println("Sticla e inchisa");
-            setOpen();
+//        if (getOpen()== false){
+//            System.out.println("Sticla e inchisa");
+//            setOpen();
+//        }
+        //deschid sticla
+        if (!open){
+            setOpen(true);
+        }else{
+            System.out.println("Sticla era deschisa");
         }
+        String rasp1 ="";
         if (availableLiquid >= cantitate) {
             availableLiquid -= cantitate;
-            return "S-a baut cat s-a dorit!";
+            rasp1= "S-a baut cat s-a dorit!";
         } else {
             availableLiquid = 0;
-            return "S-a baut mai putin decat s-a dorit";
+            rasp1= "S-a baut mai putin decat s-a dorit";
         }
+        //inchid sticla
+        setOpen((false));
+        return rasp1;
     }
 
     public boolean getOpen(){
