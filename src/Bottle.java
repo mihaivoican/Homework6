@@ -37,39 +37,44 @@ public class Bottle {
     public String setOpen(boolean deschis) {
         this.open = deschis;
         if (open) {
-            return "Bottle is opened";
-        }else{
-            return "Bottle is closed";
+            return "Bottle is opened. ";
+        } else {
+            return "Bottle is closed. ";
         }
     }
-
 
 
     public String setDrinks(float cantitate) {
-//        if (getOpen()== false){
-//            System.out.println("Sticla e inchisa");
-//            setOpen();
-//        }
+        String raspuns = "";
         //deschid sticla
-        if (!open){
-            setOpen(true);
-        }else{
-            System.out.println("Sticla era deschisa");
-        }
-        String rasp1 ="";
-        if (availableLiquid >= cantitate) {
-            availableLiquid -= cantitate;
-            rasp1= "S-a baut cat s-a dorit!";
+//        if (getOpen()== false){
+//            rasp +="Bottle is closed. ";
+//            setOpen(true);
+//        }
+        if (!getOpen()) {
+            raspuns += setOpen(true);
         } else {
-            availableLiquid = 0;
-            rasp1= "S-a baut mai putin decat s-a dorit";
+            raspuns += "Sticla era deschisa ";
+        }
+        //verific continutul
+        if (!hasLiquid()) {
+            raspuns +="Sticla NU mai are lichid. ";
+        } else {
+            if (availableLiquid >= cantitate) {
+                availableLiquid -= cantitate;
+                raspuns += "S-a baut " + cantitate + " litru. ";
+            } else {
+                availableLiquid = 0;
+                raspuns += "S-a baut mai putin de " + cantitate + " litru. ";
+            }
+            raspuns += "A mai ramas in sticla " + getAvailableLiquid() + " litri. ";
         }
         //inchid sticla
-        setOpen((false));
-        return rasp1;
+        return raspuns += setOpen((false));
+
     }
 
-    public boolean getOpen(){
+    public boolean getOpen() {
         return this.open;
     }
 
