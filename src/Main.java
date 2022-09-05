@@ -41,9 +41,9 @@ public class Main {
         Bottle btl2 = new Bottle(0.5f,0.25f,true);
         Bottle btl3 = new Bottle(5f,0f,true);
 
-        System.out.println(String.format("Sticla1: gol - %f, disponibil- %f, deschisa - %b",btl1.getEmptyCapacity(),btl1.getAvailableLiquid(),btl1.getOpen()));
-        System.out.println(String.format("Sticla2: gol - %f, disponibil- %f, deschisa - %b",btl2.getEmptyCapacity(),btl2.getAvailableLiquid(),btl2.getOpen()));
-        System.out.println(String.format("Sticla3: gol - %f, disponibil- %f, deschisa - %b",btl3.getEmptyCapacity(),btl3.getAvailableLiquid(),btl3.getOpen()));
+        System.out.println(String.format("Sticla1: gol - %5.2f, disponibil- %5.2f, deschisa - %b",btl1.getEmptyCapacity(),btl1.getAvailableLiquid(),btl1.getOpen()));
+        System.out.println(String.format("Sticla2: gol - %5.2f, disponibil- %5.2f, deschisa - %b",btl2.getEmptyCapacity(),btl2.getAvailableLiquid(),btl2.getOpen()));
+        System.out.println(String.format("Sticla3: gol - %5.2f, disponibil- %5.2f, deschisa - %b",btl3.getEmptyCapacity(),btl3.getAvailableLiquid(),btl3.getOpen()));
 
         //bem 1l din prima sticla
         System.out.println("Dorim sa bem 1l din sticla 1");
